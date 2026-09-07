@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SkillBridge student career readiness, AI job matching, internships, skills and portfolio portal.">
+    <title>SkillBridge — Student Portal</title>
+    <link rel="stylesheet" href="oppurtunity.css">
+</head>
+
+<body data-role="student">
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <div class="app-shell">
+        <aside class="sidebar" id="sidebar">
+            <div class="brand">
+                <div class="brand-mark">SB</div>
+                <div>
+                    <strong>SkillBridge</strong>
+                    <span>Academia × Industry</span>
+                </div>
+            </div>
+
+            <div class="role-switcher">
+                <label for="roleSelect">Portal</label>
+                <select id="roleSelect">
+                    <option value="student" selected>Student</option>
+                </select>
+            </div>
+
+            <nav id="nav" aria-label="Student navigation">
+                <a class="nav-link active" href="#dashboard" data-section="dashboard">
+                    <span>⌂</span><span>Dashboard</span>
+                </a>
+                <a class="nav-link" href="#profile" data-section="profile">
+                    <span>◎</span><span>Career Profile</span>
+                </a>
+                <a class="nav-link" href="#recommendations" data-section="recommendations">
+                    <span>✦</span><span>AI Opportunities</span>
+                </a>
+                <a class="nav-link" href="#skills" data-section="skills">
+                    <span>◇</span><span>Skills</span>
+                </a>
+                <a class="nav-link" href="#portfolio" data-section="portfolio">
+                    <span>▣</span><span>Portfolio</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <div class="trust-mini">
+                    <span class="dot"></span>
+                    Secure & verified platform
+                </div>
+                <button class="ghost-btn" id="logoutBtn" type="button">Sign out</button>
+            </div>
+        </aside>
+
+        <main class="main">
+            <header class="topbar">
+                <button class="icon-btn mobile-menu" id="menuBtn" aria-label="Open menu" type="button">☰</button>
+
+                <div class="topbar-title">
+                    <div class="eyebrow" id="portalEyebrow">STUDENT PORTAL</div>
+                    <h1 id="pageTitle">AI Career Recommendations</h1>
+                </div>
+
+                <div class="top-actions">
+                    <button class="icon-btn" id="notificationBtn" aria-label="Notifications" type="button">
+                        🔔
+                        <span class="notif-dot"></span>
+                    </button>
+                    <div class="avatar" aria-label="Student profile">VP</div>
+                </div>
+            </header>
+
+            <section id="content">
+                <div class="student-hero" id="dashboard">
+                    <div>
+                        <span class="eyebrow">AI-POWERED CAREER MATCHING</span>
+                        <h2>Discover opportunities built around your skills.</h2>
+                        <p>
+                            Tell SkillBridge about your skills, certificates, projects and interests.
+                            Our recommendation engine will compare your profile with available opportunities.
+                        </p>
+                        <div class="hero-pills">
+                            <span>Skill Matching</span>
+                            <span>Gap Analysis</span>
+                            <span>Ranked Opportunities</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-section" id="profile">
+                    <div class="section-header">
+                        <div>
+                            <span class="section-kicker">PROFILE BUILDER</span>
+                            <h2>Build Your Career Profile</h2>
+                            <p>Add as much information as possible for better recommendations.</p>
+                        </div>
+                    </div>
+
+                    <div class="profile-form">
+                        <div class="form-group" id="skills">
+                            <label for="skillsInput">Skills</label>
+                            <input type="text" id="skillsInput" placeholder="Python, SQL, Machine Learning, Pandas" autocomplete="off">
+                            <small>Separate multiple skills with commas.</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="certificates">Certificates</label>
+                            <input type="text" id="certificates" placeholder="Python for Data Science, AWS Cloud Practitioner" autocomplete="off">
+                            <small>Add your completed certifications.</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="projects">Projects</label>
+                            <textarea id="projects" rows="3" placeholder="Movie Recommendation System, Student Performance Prediction"></textarea>
+                            <small>Add projects you have completed.</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="achievements">Achievements</label>
+                            <textarea id="achievements" rows="3" placeholder="Hackathon finalist, coding competition winner"></textarea>
+                            <small>Competitions, hackathons, awards, etc.</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="interests">Career Interests</label>
+                            <input type="text" id="interests" placeholder="Artificial Intelligence, Data Science, Cloud Computing" autocomplete="off">
+                            <small>Tell the engine what career areas interest you.</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="education">Education</label>
+                            <input type="text" id="education" placeholder="B.Tech Computer Science Engineering" autocomplete="off">
+                            <small>Degree, branch and relevant academic details.</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="experience">Experience</label>
+                            <textarea id="experience" rows="3" placeholder="Python Developer Intern, Research Assistant"></textarea>
+                            <small>Add internships, freelance work or relevant experience.</small>
+                        </div>
+
+                        <div class="form-actions">
+                            <button id="recommendBtn" class="primary-btn" type="button">
+                                <span>🤖</span> Find My Opportunities
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="loading" class="loading-section" style="display:none;">
+                    <div class="loading-spinner"></div>
+                    <h3>Analysing your profile...</h3>
+                    <p>SkillBridge is matching your profile with available opportunities.</p>
+                </div>
+
+                <div id="resultsSection" class="results-section" style="display:none;">
+                    <div class="section-header">
+                        <div>
+                            <span class="section-kicker">AI MATCHING RESULTS</span>
+                            <h2>Recommended Opportunities</h2>
+                            <p>Opportunities are ranked according to your current profile.</p>
+                        </div>
+                        <div class="result-count" id="resultCount">0 matches</div>
+                    </div>
+                    <div id="recommendations" class="recommendations-grid"></div>
+                </div>
+
+                <div id="emptyState" class="empty-state">
+                    <div class="empty-icon">✦</div>
+                    <h3>Your recommendations will appear here</h3>
+                    <p>Complete your portal profile and click “Find My Opportunities”.</p>
+                </div>
+
+                <div class="quick-info" id="portfolio">
+                    <div class="quick-card">
+                        <span class="quick-icon">⚡</span>
+                        <div>
+                            <strong>AI-ready profile</strong>
+                            <p>Your profile data is sent directly to the recommendation API.</p>
+                        </div>
+                    </div>
+                    <div class="quick-card">
+                        <span class="quick-icon">◈</span>
+                        <div>
+                            <strong>Skill-gap insights</strong>
+                            <p>See matched skills and the skills you can learn next.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="oppurtunity.js"></script>
+</body>
+</html>
