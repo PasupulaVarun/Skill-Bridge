@@ -4,8 +4,8 @@
 const API_URL =
     (window.location.hostname === "localhost" ||
      window.location.hostname === "127.0.0.1")
-        ? "http://127.0.0.1:8000/api/recommend"
-        : "/api/recommend";
+        ? "http://127.0.0.1:8000recommend"
+        : "recommend";
 
         // ========================================================
         // ELEMENTS
