@@ -1,0 +1,482 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Complete Profile | SkillBridge</title>
+
+    <link
+        rel="stylesheet"
+        href="basic-info.css"
+    >
+
+</head>
+
+<body>
+    <video
+        autoplay
+        muted
+        loop
+        playsinline
+        id="bg-video">
+
+        <source src="bg.mp4" type="video/mp4">
+
+    </video>
+
+
+<div class="page">
+
+    <div class="profile-card">
+
+
+        <!-- HEADER -->
+
+        <div class="header">
+
+            <div class="logo-icon">
+                SB
+            </div>
+
+            <div>
+
+                <h1>
+                    Complete your profile
+                </h1>
+
+                <p>
+                    Tell us about yourself so we can provide
+                    relevant opportunities.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ROLE DISPLAY -->
+
+        <div class="role-box">
+
+            <span>
+                Account Type
+            </span>
+
+            <strong id="roleDisplay">
+                Loading...
+            </strong>
+
+        </div>
+
+
+        <form id="profileForm">
+
+
+            <!-- BASIC INFORMATION -->
+
+            <section>
+
+                <h2>
+                    Basic Information
+                </h2>
+
+                <div class="grid">
+
+
+                    <div class="field">
+
+                        <label>
+                            Full Name *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="fullName"
+                            placeholder="Enter your full name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label>
+                            Email *
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            readonly
+                        >
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label>
+                            Phone Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            placeholder="+91 XXXXX XXXXX"
+                        >
+
+                    </div>
+
+
+                    <!-- STUDENT ONLY -->
+
+                    <div
+                        class="field student-field"
+                    >
+
+                        <label>
+                            Stream / Branch *
+                        </label>
+
+                        <select id="stream">
+
+                            <option value="">
+                                Select stream
+                            </option>
+
+                            <option>
+                                CSE
+                            </option>
+
+                            <option>
+                                ECE
+                            </option>
+
+                            <option>
+                                EEE
+                            </option>
+
+                            <option>
+                                Mechanical
+                            </option>
+
+                            <option>
+                                Civil
+                            </option>
+
+                            <option>
+                                AI & ML
+                            </option>
+
+                            <option>
+                                Data Science
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- STUDENT COLLEGE -->
+
+            <section
+                id="studentCollege"
+                class="student-only"
+            >
+
+                <h2>
+                    College Details
+                </h2>
+
+                <div class="grid">
+
+
+                    <div class="field">
+
+                        <label>
+                            College / University *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="college"
+                            placeholder="Enter college name"
+                        >
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label>
+                            Year of Study *
+                        </label>
+
+                        <select id="year">
+
+                            <option value="">
+                                Select year
+                            </option>
+
+                            <option>
+                                1st Year
+                            </option>
+
+                            <option>
+                                2nd Year
+                            </option>
+
+                            <option>
+                                3rd Year
+                            </option>
+
+                            <option>
+                                4th Year
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- VERIFIED -->
+
+                <div class="verified">
+
+                    <div class="verified-icon">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Verified by College
+                        </strong>
+
+                        <p>
+                            Your student identity can be
+                            verified through your registered
+                            college.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- STUDENT SKILLS -->
+
+            <section
+                id="studentSkills"
+                class="student-only"
+            >
+
+                <h2>
+                    Skills & Career Interests
+                </h2>
+
+
+                <div class="field">
+
+                    <label>
+                        Technical Skills *
+                    </label>
+
+                    <input
+                        type="text"
+                        id="skills"
+                        placeholder="Python, SQL, React, Machine Learning..."
+                    >
+
+                    <small>
+                        Separate multiple skills with commas.
+                    </small>
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>
+                        Career Interests *
+                    </label>
+
+                    <input
+                        type="text"
+                        id="interests"
+                        placeholder="AI, Web Development, Data Science..."
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>
+                        What are you looking for?
+                    </label>
+
+                    <select id="opportunityType">
+
+                        <option value="">
+                            Select preference
+                        </option>
+
+                        <option value="internship">
+                            Internship
+                        </option>
+
+                        <option value="job">
+                            Job
+                        </option>
+
+                        <option value="both">
+                            Jobs & Internships
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </section>
+
+
+            <!-- ORGANIZATION -->
+
+            <section
+                id="organizationSection"
+                class="organization-only"
+            >
+
+                <h2 id="organizationTitle">
+                    Organization Details
+                </h2>
+
+
+                <div class="grid">
+
+
+                    <div class="field">
+
+                        <label id="organizationLabel">
+                            Organization Name *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="organization"
+                            placeholder="Enter organization name"
+                        >
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label>
+                            Website
+                        </label>
+
+                        <input
+                            type="url"
+                            id="website"
+                            placeholder="https://example.com"
+                        >
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label>
+                            Organization Type
+                        </label>
+
+                        <select id="organizationType">
+
+                            <option value="">
+                                Select type
+                            </option>
+
+                            <option>
+                                Technology
+                            </option>
+
+                            <option>
+                                Finance
+                            </option>
+
+                            <option>
+                                Healthcare
+                            </option>
+
+                            <option>
+                                Manufacturing
+                            </option>
+
+                            <option>
+                                Education
+                            </option>
+
+                            <option>
+                                Government
+                            </option>
+
+                            <option>
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- BUTTON -->
+
+            <button
+                type="submit"
+                class="continue-btn"
+            >
+                Save Profile & Continue →
+            </button>
+
+
+            <p
+                id="formError"
+                class="error"
+            ></p>
+
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<script src="basic-info.js"></script>
+
+</body>
+
+</html>
